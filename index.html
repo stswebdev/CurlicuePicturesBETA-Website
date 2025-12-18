@@ -33,15 +33,14 @@
 
         /* --- NAVIGATION --- */
         nav {
-            padding: 25px 5%; /* Increased padding for the bigger logo */
+            padding: 25px 5%;
             display: flex; justify-content: space-between; align-items: center;
             border-bottom: 1px solid var(--border);
             position: sticky; top: 0; background: var(--black); z-index: 100;
         }
 
-        /* LOGO SET TO MUCH BIGGER SIZE */
         .nav-logo {
-            height: 120px; /* Signficantly increased size */
+            height: 120px; 
             width: auto;
             display: block;
         }
@@ -98,10 +97,12 @@
 
         /* --- PROFILE STYLING --- */
         .profile-box { max-width: 900px; margin: 0 auto; border-left: 2px solid var(--gold); padding-left: 30px; }
-        .team-member { margin-bottom: 40px; }
-        .team-member h2 { font-family: 'Archivo Black', sans-serif; font-size: 2.5rem; text-transform: uppercase; }
-        .team-member p { color: #888; margin: 5px 0 10px; text-transform: uppercase; font-size: 0.8rem; }
-        .email-link { color: var(--vhs-blue); text-decoration: none; font-size: 0.9rem; }
+        .team-member { margin-bottom: 60px; }
+        .team-member h2 { font-family: 'Archivo Black', sans-serif; font-size: 2.5rem; text-transform: uppercase; color: var(--gold); }
+        .team-member .role { color: #888; margin: 5px 0 15px; text-transform: uppercase; font-size: 0.8rem; font-weight: bold; display: block; }
+        .team-member .desc { text-transform: none; color: #ccc; font-size: 1.05rem; line-height: 1.6; margin-bottom: 15px; }
+        .email-link { color: var(--vhs-blue); text-decoration: none; font-size: 0.9rem; font-family: 'Space Mono', monospace; }
+        .email-link:hover { text-decoration: underline; }
 
         footer { padding: 60px; text-align: center; font-size: 0.75rem; border-top: 1px solid var(--border); color: #555; }
     </style>
@@ -139,6 +140,14 @@
             <img src="https://img.youtube.com/vi/pc283tSzGAI/maxresdefault.jpg">
             <div class="meta"><h3>Final Hours of Olympic</h3></div>
         </a>
+        <a href="https://www.youtube.com/watch?v=INLORsOBqb8" class="video-card" target="_blank">
+            <img src="https://img.youtube.com/vi/INLORsOBqb8/maxresdefault.jpg">
+            <div class="meta"><h3>A New Beginning</h3></div>
+        </a>
+        <a href="https://www.youtube.com/watch?v=8dq4lzO8E3A" class="video-card" target="_blank">
+            <img src="https://img.youtube.com/vi/8dq4lzO8E3A/maxresdefault.jpg">
+            <div class="meta"><h3>Very Early Prestige Film Test- Every Little Moment</h3></div>
+        </a>
     </div>
 </section>
 
@@ -146,25 +155,46 @@
     <div class="profile-box">
         <div class="team-member">
             <h2>Will</h2>
-            <p>Founder & Director</p>
-            <p style="text-transform: none; color: #ccc; font-size: 1.1rem; line-height: 1.6;">
+            <span class="role">Founder & Director</span>
+            <p class="desc">
                 Will established Curlicue Pictures to blend historical storytelling with the craft of miniature cinematography. As Founder, he oversees the creative vision and production of all studio projects.
             </p>
         </div>
+
         <div class="team-member">
             <h2>Chris</h2>
-            <p>Senior Production Lead & Cinematography</p>
+            <span class="role">Co-Founder & Co-Producer</span>
+            <p class="desc">
+                Chris is the Co-Founder and Co-Producer of Curlicue Pictures. He has been an integral part of the studio and "Curlitwo," the second channel. He is an everlasting individual who is also part of many projects and videos across the network.
+            </p>
             <a href="mailto:chris@curlicuepictures.com" class="email-link">chris@curlicuepictures.com</a>
         </div>
-        <div class="team-member">
-            <h2>Phoenix</h2>
-            <p>Voice Actor</p>
-            <a href="mailto:phoenix@curlicuepictures.com" class="email-link">phoenix@curlicuepictures.com</a>
-        </div>
+
         <div class="team-member">
             <h2>Noah</h2>
-            <p>Voice Actor</p>
+            <span class="role">Voice Actor</span>
+            <p class="desc">
+                Noah is phenomenal with voice acting. You can find him voice acting in many things such as "Very Early Prestige Film Test- Every Little Moment."
+            </p>
             <a href="mailto:noah@curlicuepictures.com" class="email-link">noah@curlicuepictures.com</a>
+        </div>
+
+        <div class="team-member">
+            <h2>Phoenix</h2>
+            <span class="role">Voice Actor</span>
+            <p class="desc">
+                Phoenix is yet to be coming soon and is a new addition to Curlicue Pictures. We are excited for the unique voice talent he brings to our upcoming lineup.
+            </p>
+            <a href="mailto:phoenix@curlicuepictures.com" class="email-link">phoenix@curlicuepictures.com</a>
+        </div>
+
+        <div class="team-member">
+            <h2>Anthony</h2>
+            <span class="role">Business Associate</span>
+            <p class="desc">
+                Anthony serves as a Business Associate for Curlicue Pictures.
+            </p>
+            <a href="mailto:AMPEDO@curlicuepictures.com" class="email-link">AMPEDO@curlicuepictures.com</a>
         </div>
     </div>
 </section>
