@@ -80,8 +80,8 @@
         /* --- VIDEO GRID --- */
         .archive-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
         }
 
         .video-card {
@@ -92,8 +92,9 @@
 
         .video-card:hover { border-color: var(--gold); }
         .video-card img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; }
-        .video-card .meta { padding: 20px; }
-        .video-card h3 { font-family: 'Archivo Black', sans-serif; text-transform: uppercase; font-size: 1rem; }
+        .video-card .meta { padding: 25px; }
+        .video-card h3 { font-family: 'Archivo Black', sans-serif; text-transform: uppercase; font-size: 1.2rem; margin-bottom: 5px;}
+        .video-card .label { font-size: 0.7rem; color: var(--gold); letter-spacing: 2px; font-weight: bold; }
 
         /* --- PROFILE STYLING --- */
         .profile-box { max-width: 900px; margin: 0 auto; border-left: 2px solid var(--gold); padding-left: 30px; }
@@ -127,26 +128,21 @@
 </header>
 
 <section id="archive" class="content-section active">
+    <h1 style="font-family:'Archivo Black'; margin-bottom: 40px; text-transform: uppercase; letter-spacing: 2px;">Curlicue's Best Work</h1>
     <div class="archive-grid">
-        <a href="https://www.youtube.com/watch?v=DMepRTp-JHA" class="video-card" target="_blank">
-            <img src="https://img.youtube.com/vi/DMepRTp-JHA/maxresdefault.jpg">
-            <div class="meta"><h3>The Shipyard: Season 2</h3></div>
-        </a>
-        <a href="https://www.youtube.com/watch?v=i3Mlauq74Mg" class="video-card" target="_blank">
-            <img src="https://img.youtube.com/vi/i3Mlauq74Mg/maxresdefault.jpg">
-            <div class="meta"><h3>The Shipyard: Season 1</h3></div>
-        </a>
-        <a href="https://www.youtube.com/watch?v=pc283tSzGAI" class="video-card" target="_blank">
-            <img src="https://img.youtube.com/vi/pc283tSzGAI/maxresdefault.jpg">
-            <div class="meta"><h3>Final Hours of Olympic</h3></div>
-        </a>
         <a href="https://www.youtube.com/watch?v=INLORsOBqb8" class="video-card" target="_blank">
             <img src="https://img.youtube.com/vi/INLORsOBqb8/maxresdefault.jpg">
-            <div class="meta"><h3>A New Beginning</h3></div>
+            <div class="meta">
+                <span class="label">BEST WORK</span>
+                <h3>A New Beginning</h3>
+            </div>
         </a>
         <a href="https://www.youtube.com/watch?v=8dq4lzO8E3A" class="video-card" target="_blank">
             <img src="https://img.youtube.com/vi/8dq4lzO8E3A/maxresdefault.jpg">
-            <div class="meta"><h3>Very Early Prestige Film Test- Every Little Moment</h3></div>
+            <div class="meta">
+                <span class="label">BEST WORK</span>
+                <h3>Very Early Prestige Film Test- Every Little Moment</h3>
+            </div>
         </a>
     </div>
 </section>
