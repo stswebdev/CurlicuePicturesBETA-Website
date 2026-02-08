@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CURLICUE PICTURES | Studio</title>
+    
+    <title>CURLICUE PICTURES | Our House - New Series Trailer</title>
+    <meta name="description" content="Official home of Curlicue Pictures. Watch the trailer for our new series 'Our House'. Explore miniature cinematography and historical storytelling.">
+    <meta name="keywords" content="Our House series, Curlicue Pictures, Our House trailer, miniature cinematography, historical film, Will director, Chris producer, independent studio">
+    
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Mono&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -21,6 +25,7 @@
             color: var(--text);
             font-family: 'Space Mono', monospace;
             overflow-x: hidden;
+            scroll-behavior: smooth;
         }
 
         /* --- VHS OVERLAY --- */
@@ -28,7 +33,7 @@
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%);
             background-size: 100% 4px;
-            pointer-events: none; z-index: 9999; opacity: 0.3;
+            pointer-events: none; z-index: 9999; opacity: 0.2;
         }
 
         /* --- NAVIGATION --- */
@@ -36,76 +41,78 @@
             padding: 25px 5%;
             display: flex; justify-content: space-between; align-items: center;
             border-bottom: 1px solid var(--border);
-            position: sticky; top: 0; background: var(--black); z-index: 100;
+            position: sticky; top: 0; background: rgba(8, 8, 8, 0.95); 
+            backdrop-filter: blur(5px); z-index: 100;
         }
 
-        .nav-logo {
-            height: 120px; 
-            width: auto;
-            display: block;
-        }
+        .nav-logo { height: 120px; width: auto; display: block; }
 
         .nav-links button {
             background: none; border: none; color: var(--text);
             font-family: 'Archivo Black', sans-serif;
             text-transform: uppercase; margin-left: 25px;
             font-size: 0.85rem; letter-spacing: 2px;
-            cursor: pointer; transition: 0.3s;
+            cursor: pointer; transition: 0.3s ease;
         }
 
-        .nav-links button:hover { color: var(--gold); }
+        .nav-links button:hover { color: var(--gold); transform: translateY(-2px); }
 
-        /* --- HEADER --- */
-        header {
-            padding: 80px 5%;
-            text-align: center;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .main-logo { width: 380px; max-width: 80%; margin-bottom: 20px; }
+        /* --- HERO SECTION --- */
+        header { padding: 100px 5%; text-align: center; border-bottom: 1px solid var(--border); }
+        .main-logo { width: 450px; max-width: 90%; margin-bottom: 30px; }
 
         .cta-btn {
-            display: inline-block; margin-top: 20px; padding: 12px 30px;
-            border: 1px solid var(--gold); color: var(--gold);
+            display: inline-block; margin-top: 20px; padding: 15px 40px;
+            border: 2px solid var(--gold); color: var(--gold);
             text-decoration: none; font-family: 'Archivo Black', sans-serif;
-            text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px;
-            cursor: pointer; background: transparent; transition: 0.3s;
+            text-transform: uppercase; font-size: 0.9rem; letter-spacing: 2px;
+            cursor: pointer; background: transparent; transition: 0.4s;
         }
-        .cta-btn:hover { background: var(--gold); color: var(--black); }
+        .cta-btn:hover { background: var(--gold); color: var(--black); box-shadow: 0 0 20px rgba(197, 160, 89, 0.4); }
 
-        /* --- SECTIONS --- */
-        .content-section { padding: 80px 10%; display: none; min-height: 60vh; }
+        /* --- CONTENT SECTIONS --- */
+        .content-section { padding: 80px 10%; display: none; min-height: 70vh; animation: fadeIn 0.6s ease-in-out; }
         .content-section.active { display: block; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
         /* --- VIDEO GRID --- */
         .archive-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 40px;
+            gap: 40px; margin-top: 30px;
         }
 
         .video-card {
             text-decoration: none; color: inherit;
             border: 1px solid var(--border);
-            background: #111; transition: 0.3s;
+            background: #111; transition: 0.4s ease;
+            position: relative; overflow: hidden;
         }
 
-        .video-card:hover { border-color: var(--gold); }
+        .video-card:hover { border-color: var(--gold); transform: scale(1.02); z-index: 10; }
         .video-card img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; }
         .video-card .meta { padding: 25px; }
-        .video-card h3 { font-family: 'Archivo Black', sans-serif; text-transform: uppercase; font-size: 1.2rem; margin-bottom: 5px;}
+        .video-card h3 { font-family: 'Archivo Black', sans-serif; text-transform: uppercase; font-size: 1.2rem; margin-top: 5px; }
         .video-card .label { font-size: 0.7rem; color: var(--gold); letter-spacing: 2px; font-weight: bold; }
+        
+        /* Highlight Badge for New Series */
+        .badge-new {
+            position: absolute; top: 15px; right: 15px;
+            background: var(--gold); color: var(--black);
+            padding: 5px 12px; font-family: 'Archivo Black', sans-serif;
+            font-size: 0.7rem; letter-spacing: 1px;
+        }
 
-        /* --- PROFILE STYLING --- */
-        .profile-box { max-width: 900px; margin: 0 auto; border-left: 2px solid var(--gold); padding-left: 30px; }
-        .team-member { margin-bottom: 60px; }
-        .team-member h2 { font-family: 'Archivo Black', sans-serif; font-size: 2.5rem; text-transform: uppercase; color: var(--gold); }
-        .team-member .role { color: #888; margin: 5px 0 15px; text-transform: uppercase; font-size: 0.8rem; font-weight: bold; display: block; }
-        .team-member .desc { text-transform: none; color: #ccc; font-size: 1.05rem; line-height: 1.6; margin-bottom: 15px; }
-        .email-link { color: var(--vhs-blue); text-decoration: none; font-size: 0.9rem; font-family: 'Space Mono', monospace; }
-        .email-link:hover { text-decoration: underline; }
+        /* --- ABOUT/TEAM STYLING --- */
+        .profile-box { max-width: 900px; margin: 0 auto; border-left: 3px solid var(--gold); padding-left: 40px; }
+        .team-member { margin-bottom: 70px; }
+        .team-member h2 { font-family: 'Archivo Black', sans-serif; font-size: 3rem; text-transform: uppercase; color: var(--gold); line-height: 1; }
+        .team-member .role { color: #888; margin: 10px 0 20px; text-transform: uppercase; font-size: 0.85rem; font-weight: bold; display: block; }
+        .team-member .desc { color: #ddd; font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px; }
+        .email-link { color: var(--vhs-blue); text-decoration: none; font-size: 1rem; transition: 0.3s; }
 
-        footer { padding: 60px; text-align: center; font-size: 0.75rem; border-top: 1px solid var(--border); color: #555; }
+        footer { padding: 80px; text-align: center; font-size: 0.8rem; border-top: 1px solid var(--border); color: #444; }
     </style>
 </head>
 <body>
@@ -113,7 +120,7 @@
 <div class="vhs-lines"></div>
 
 <nav>
-    <img src="https://images.ctfassets.net/bukx3i16f5hg/76ptUvnjiF0GHNgnGMP4Gh/677130302331f075193e9dbf12fc595e/curlicuetxtonly.png?h=250" class="nav-logo">
+    <img src="https://images.ctfassets.net/bukx3i16f5hg/76ptUvnjiF0GHNgnGMP4Gh/677130302331f075193e9dbf12fc595e/curlicuetxtonly.png?h=250" class="nav-logo" alt="Curlicue">
     <div class="nav-links">
         <button onclick="tab('archive')">Archive</button>
         <button onclick="tab('about')">About</button>
@@ -122,26 +129,37 @@
 </nav>
 
 <header id="hero">
-    <img src="https://images.ctfassets.net/bukx3i16f5hg/62SaPrS5zsyvLvRdzetdhv/deb843b4ffcfedabd6ddaf35fce0a078/CurlicuePicturesLogo.png" class="main-logo">
+    <img src="https://images.ctfassets.net/bukx3i16f5hg/62SaPrS5zsyvLvRdzetdhv/deb843b4ffcfedabd6ddaf35fce0a078/CurlicuePicturesLogo.png" class="main-logo" alt="Curlicue Pictures">
     <br>
-    <button class="cta-btn" onclick="tab('about')">Learn More About the Studio</button>
+    <button class="cta-btn" onclick="tab('archive')">Watch Latest: Our House</button>
 </header>
 
 <section id="archive" class="content-section active">
-    <h1 style="font-family:'Archivo Black'; margin-bottom: 40px; text-transform: uppercase; letter-spacing: 2px;">Curlicue's Best Work</h1>
+    <h1 style="font-family:'Archivo Black'; margin-bottom: 40px; text-transform: uppercase; letter-spacing: 2px;">Studio Archive</h1>
     <div class="archive-grid">
+        
+        <a href="https://www.youtube.com/watch?v=uMGevnEvado" class="video-card" target="_blank" style="grid-column: 1 / -1; border-color: var(--gold);">
+            <div class="badge-new">NEW SERIES</div>
+            <img src="https://images.ctfassets.net/bukx3i16f5hg/3uYNHb0uI2GhH9BkHLVnsT/62e3b407e0f2769bfb1418d9ddb635be/OurHouse.jpg?h=250" alt="Our House Trailer">
+            <div class="meta">
+                <span class="label">OFFICIAL TRAILER</span>
+                <h3 style="font-size: 2rem;">Our House</h3>
+            </div>
+        </a>
+
         <a href="https://www.youtube.com/watch?v=INLORsOBqb8" class="video-card" target="_blank">
             <img src="https://images.ctfassets.net/bukx3i16f5hg/4pP5FuKYcBplWBJcWjYGZw/707e1988e8f7bcd7d606e434b610d5ef/ANewBeginning.png?h=250" alt="A New Beginning">
             <div class="meta">
-                <span class="label">BEST WORK</span>
+                <span class="label">FEATURED FILM</span>
                 <h3>A New Beginning</h3>
             </div>
         </a>
+
         <a href="https://www.youtube.com/watch?v=8dq4lzO8E3A" class="video-card" target="_blank">
-            <img src="https://images.ctfassets.net/bukx3i16f5hg/5CUF62e5DORQzh34D4O6yf/0f64a063f990ce7ee772741dbac13ccd/EveryLittleMoment.png?h=250" alt="Very Early Prestige Film Test">
+            <img src="https://images.ctfassets.net/bukx3i16f5hg/5CUF62e5DORQzh34D4O6yf/0f64a063f990ce7ee772741dbac13ccd/EveryLittleMoment.png?h=250" alt="Every Little Moment">
             <div class="meta">
-                <span class="label">BEST WORK</span>
-                <h3>Very Early Prestige Film Test- Every Little Moment</h3>
+                <span class="label">FILM TEST</span>
+                <h3>Very Early Prestige Film Test</h3>
             </div>
         </a>
     </div>
@@ -152,46 +170,22 @@
         <div class="team-member">
             <h2>Will</h2>
             <span class="role">Founder & Director</span>
-            <p class="desc">
-                Will established Curlicue Pictures to blend historical storytelling with the craft of miniature cinematography. As Founder, he oversees the creative vision and production of all studio projects.
-            </p>
+            <p class="desc">Will established Curlicue Pictures to blend historical storytelling with the craft of miniature cinematography.</p>
             <a href="mailto:will@curlicuepictures.com" class="email-link">will@curlicuepictures.com</a>
         </div>
-
         <div class="team-member">
             <h2>Chris</h2>
             <span class="role">Co-Founder & Co-Producer</span>
-            <p class="desc">
-                Chris is the Co-Founder and Co-Producer of Curlicue Pictures. He has been an integral part of the studio and "Curlitwo," the second channel. He is an everlasting individual who is also part of many projects and videos across the network.
-            </p>
+            <p class="desc">Chris is the Co-Founder and Co-Producer of Curlicue Pictures and a key contributor to the "Curlitwo" channel.</p>
             <a href="mailto:chris@curlicuepictures.com" class="email-link">chris@curlicuepictures.com</a>
-        </div>
-
-        <div class="team-member">
-            <h2>Noah</h2>
-            <span class="role">Voice Actor</span>
-            <p class="desc">
-                Noah is phenomenal with voice acting. You can find him voice acting in many things such as "Very Early Prestige Film Test- Every Little Moment."
-            </p>
-        </div>
-
-        <div class="team-member">
-            <h2>Phoenix</h2>
-            <span class="role">Voice Actor</span>
-            <p class="desc">
-                Phoenix is yet to be coming soon and is a new addition to Curlicue Pictures. We are excited for the unique voice talent he brings to our upcoming lineup.
-            </p>
         </div>
     </div>
 </section>
 
 <section id="contact" class="content-section">
     <div class="profile-box">
-        <h1 style="font-family:'Archivo Black'; font-size: 2.5rem;">QUESTIONS OR FEEDBACK?</h1>
-        <p style="margin: 20px 0; font-size: 1.1rem;">
-            For questions or inquiries or feedback, please contact us at:
-        </p>
-        <a href="mailto:info@curlicuepictures.com" class="email-link" style="font-size: 1.5rem; font-weight: bold;">info@curlicuepictures.com</a>
+        <h2 style="font-family:'Archivo Black'; font-size: 3rem;">CONTACT</h2>
+        <a href="mailto:info@curlicuepictures.com" class="email-link" style="font-size: 1.8rem; font-weight: bold; font-family: 'Archivo Black';">info@curlicuepictures.com</a>
     </div>
 </section>
 
@@ -204,7 +198,7 @@
         document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
         document.getElementById(id).classList.add('active');
         document.getElementById('hero').style.display = (id === 'archive') ? 'block' : 'none';
-        window.scrollTo(0,0);
+        window.scrollTo({top: 0, behavior: 'smooth'});
     }
 </script>
 
